@@ -1,13 +1,13 @@
 class PackagesController < ApplicationController
 
   def index
-    packages = Packages.all
+    @packages = Packages.all
 
-    render :json
+    render :json @package
   end
 
   def show
-    package = Package.find(params[:id])
+    @package = Package.find(params[:id])
 
     render :json
   end
@@ -25,9 +25,9 @@ class PackagesController < ApplicationController
   # end
 
   def create
-    package = Package.create(package_params)
+    @package = Package.create(package_params)
 
-    render :json
+    render :json @package
   end
 
   private
@@ -35,5 +35,5 @@ class PackagesController < ApplicationController
   def package_params
     params.require(packages:).permit(:price, :quantity, :user_id, :meal_id, :name)
   end
-  
+
 end

@@ -1,10 +1,26 @@
 class UsersController < ApplicationController
 
+  def index
+    users = User.all
+
+    render json: users
+  end
+
   def show
 		user = User.find(params[:id])
 
 		render json: user
 	end
+
+  def new
+    user = User.new
+  end
+
+  # def login
+  #   byebug
+  #   @user = User.find_by(username: params[:username])
+  #
+  # end
 
 	def create
 		user = User.new(
@@ -12,42 +28,25 @@ class UsersController < ApplicationController
 			username: params[:username],
 			password: params[:password],
       age: params[:age],
+      weight: params[:weight],
       height: params[:height],
       bmi: params[:bmi],
-
 		)
-
 		if user.save
-			token = encode_token(user)
 
-			render json: {user: User.new(user), token: token}
+
+			render json: user
 		else
-			render json: {errors: user.errors.full_messages}
+			render json: user.errors.full_messages
 		end
 	end
+
+
   def show
 		user = User.find(params[:id])
 
 		render json: user
 	end
 
-	def create
-		user = User.new(
-			name: params[:name],
-			username: params[:username],
-			password: params[:password],
-      age: params[:age],
-      height: params[:height],
-      bmi: params[:bmi],
-		)
-
-		if user.save
-			token = encode_token(user)
-
-			render json: {user: User.new(user), token: token}
-		else
-			render json: {errors: user.errors.full_messages}
-		end
-	end
 
 end

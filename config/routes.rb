@@ -12,5 +12,6 @@ post "/login", to: "auth#login"
 post "/users", to: "users#login"
 get "/auto_login", to: "auth#auto_login"
 post "pacakges", to: 'packages#index'
+# post "/pacakges", to: 'packages#'
 
 end

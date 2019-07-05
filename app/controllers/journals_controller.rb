@@ -7,11 +7,13 @@ class JournalsController < ApplicationController
 
   def show
     @journal = Journal.find(params[:id])
+
     render json: @journal
+    
   end
 
   def new
-    journal = Journal.new
+    @journal = Journal.new(journal_params)
   end
 
   def create

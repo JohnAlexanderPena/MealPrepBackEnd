@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     users = User.all
 
@@ -12,9 +13,9 @@ class UsersController < ApplicationController
 		render json: user
 	end
 
-  def new
-    user = User.new
-  end
+  # def new
+  #   user = User.new
+  # end
 
   # def login
   #   byebug
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   # end
 
 	def create
+
 		user = User.new(
 			name: params[:name],
 			username: params[:username],
@@ -33,9 +35,9 @@ class UsersController < ApplicationController
       bmi: params[:bmi],
 		)
 		if user.save
-			# token = encode_token(user)
+			token = encode_token(user)
 
-			render json: user
+			render json: {user: user, token: token}
 		else
 			render json: {errors: user.errors.full_messages}
 		end

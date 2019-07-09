@@ -1,4 +1,4 @@
-  User.create(name: "John P", username: "JP", bmi: 25, age: 28, password:"123", height: 67, weight: 160)
+User.create(name: "John P", username: "JP", bmi: 25, age: 28, password:"123", height: 67, weight: 160)
 User.create(name: "Alex K", username: "Al", bmi: 23, age: 28, password:"123", height: 60, weight: 135)
 User.create(name: "Stephanie P", username: "Steph", bmi: 23.9, age: 28, password:"123", height: 58, weight: 140)
 
@@ -11,8 +11,8 @@ Journal.create(start_weight: 165, monthly_weight: 164, carbs: 23, protein:4, ene
 Journal.create(start_weight: 130, monthly_weight: 131, carbs: 54, protein:9, energy: 400, sugar: 21, fat: 3, cheat_foods: "Hamburger", content: "Hamburger", user_id: 3)
 #
 Package.create(name: "Heavy", price: 30, user_id: 1, quantity: 3)
-Package.create(name: 'Light', price: 60, user_id: 3, quantity: 6)
-Package.create(name: "Balanced", price: 50, user_id: 2, quantity: 4)
+Package.create(name: 'Light', price: 60, user_id: 2, quantity: 6)
+Package.create(name: "Balanced", price: 50, user_id: 3, quantity: 4)
 
 
 Meal.create(name: "Salmon", energy: 200, protein: 29, veggie: "Non-Vegetarian", fat: 30, package_id: 3, price: 9, image: "https://www.fifteenspatulas.com/wp-content/uploads/2012/08/Pan-Seared-Salmon-Fifteen-Spatulas-9-640x427.jpg")

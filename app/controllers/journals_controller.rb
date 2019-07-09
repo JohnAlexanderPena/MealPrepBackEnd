@@ -24,6 +24,7 @@ class JournalsController < ApplicationController
   end
 
   def update
+
     @journal = Journal.find(params[:id])
     @journal.update(journal_params)
 
@@ -42,7 +43,7 @@ class JournalsController < ApplicationController
   private
 
   def journal_params
-    params.require(:journal).permit(:sugar, :protein, :carbs, :energy, :user_id, :fat)
+    params.require(:journal).permit(:sugar, :protein, :carbs, :energy, :user_id, :fat, :content)
   end
 
 end

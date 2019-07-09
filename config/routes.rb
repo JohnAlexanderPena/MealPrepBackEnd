@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :meals
   resources :journals
 
-post "/users/:id/get_package", to: "users#get_package"
-post "pacakges", to: 'packages#index'
+post "/users/:id/package", to: "users#package"
+patch "/packages/:id", to: 'packages#update'
 post "/login", to: "auth#login"
 
 get "/auto_login", to: "auth#auto_login"

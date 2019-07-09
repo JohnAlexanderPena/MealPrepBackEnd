@@ -43,6 +43,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+  def delete
+    user = user.find(params[:id])
+
+    user.destroy
+  end
 
   def show
 		user = User.find(params[:id])

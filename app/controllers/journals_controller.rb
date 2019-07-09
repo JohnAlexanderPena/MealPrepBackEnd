@@ -9,8 +9,9 @@ class JournalsController < ApplicationController
     @journal = Journal.find(params[:id])
 
     render json: @journal
-    
   end
+
+
 
   def new
     @journal = Journal.new(journal_params)
@@ -41,7 +42,7 @@ class JournalsController < ApplicationController
   private
 
   def journal_params
-    params.require(:journal).permit(:start_weight, :content, :monthly_weight, :user_id, :cheat_foods)
+    params.require(:journal).permit(:sugar, :protein, :carbs, :energy, :user_id, :fat)
   end
 
 end

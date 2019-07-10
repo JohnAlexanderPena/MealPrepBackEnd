@@ -43,6 +43,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+  def update
+      @user = User.find(params[:id])
+
+      @user.update(bmi: params[:bmi])
+
+      render json: @user
+  end
+
   def delete
     user = user.find(params[:id])
 

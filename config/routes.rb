@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 post "/users/:id/package", to: "users#package"
 patch "/packages/:id", to: 'packages#update'
+patch "/users/:id", to: 'users#update'
 post "/login", to: "auth#login"
 
 get "/auto_login", to: "auth#auto_login"

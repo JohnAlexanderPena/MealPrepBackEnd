@@ -23,6 +23,15 @@ class UsersController < ApplicationController
   #
   # end
 
+  def get_packages
+    
+    user = User.find(decode_token)
+
+    packages = user.packages
+
+    render json: packages
+  end
+
 	def create
 
 		user = User.new(

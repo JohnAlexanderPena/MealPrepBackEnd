@@ -1,4 +1,7 @@
+
+
 class User < ApplicationRecord
+
 
   validates :username, uniqueness: true
 
@@ -9,6 +12,7 @@ class User < ApplicationRecord
    has_many :meals, through: :packages
 
   has_secure_password
+
 
 
 

@@ -24,12 +24,21 @@ class UsersController < ApplicationController
   # end
 
   def get_packages
-    
+
     user = User.find(decode_token)
 
     packages = user.packages
 
     render json: packages
+  end
+
+  def get_journals
+
+    user = User.find(decode_token)
+
+    journals = user.journals
+
+    render json: journals
   end
 
 	def create

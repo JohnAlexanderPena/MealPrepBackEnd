@@ -13,7 +13,7 @@ class AuthController < ApplicationController
 
       render json:  { user: user, token: token }
     else
-      # If not, tell them they screwed up
+      # If not, tell them they messed up
       render json: {errors: "Wrong Username and/or Password!"}
     end
 
@@ -26,7 +26,7 @@ class AuthController < ApplicationController
     if user
       render json: user
     else
-      render json: {errors: "You dun goofed!"}
+      render json: {errors: "Check Entered Fields!"}
     end
 
   end

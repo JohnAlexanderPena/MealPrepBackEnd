@@ -32,6 +32,17 @@ class JournalsController < ApplicationController
 
   end
 
+  def get_journals
+
+
+    user = User.find(params[:id])
+
+    journals = user.journals
+    
+
+    render json: journals
+  end
+
   def destroy
     @journal = Journal.find(params[:id])
 
